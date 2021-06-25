@@ -24,8 +24,8 @@ function Contacts() {
             </Row>
             <Row>
                 <Col xs={12}>
-                    <ContactItem title='Ali Komijani' />
-                    <ContactItem title='Ali mohammadi' />
+                    <ContactItem title='Ali Komijani' subtitle='My Card' />
+                    <ContactItem title='Ali mohammadi'  />
                     <ContactItem title='Hassan Komijani' />
                 </Col>
             </Row>
