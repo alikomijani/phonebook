@@ -1,5 +1,7 @@
 
 import { Container, Row, Col, InputGroup, FormControl } from 'react-bootstrap';
+import { ContactItem } from '../../components'
+import './style.scss'
 function Contacts() {
     return (
         <Container>
@@ -18,6 +20,13 @@ function Contacts() {
                             aria-describedby="basic-addon1"
                         />
                     </InputGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={12}>
+                    <ContactItem title='Ali Komijani' />
+                    <ContactItem title='Ali mohammadi' />
+                    <ContactItem title='Hassan Komijani' />
                 </Col>
             </Row>
         </Container>
