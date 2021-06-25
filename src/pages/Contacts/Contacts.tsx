@@ -8,8 +8,9 @@ const contacts = [
     { first_name: 'Hassan', last_name: 'Haddai', subtitle: 'Father', imgSrc: '' },
     { first_name: 'Seyed', last_name: 'Ali', subtitle: 'Friend', imgSrc: '' },
 ]
-function Contacts() {
+function Contacts(props: any) {
     const [filter, setFilter] = useState('')
+    console.log(props)
     return (
         <div>
             <Container>
@@ -27,8 +28,9 @@ function Contacts() {
                     <Row>
                         <Col xs={12}>
                             {
-                                contacts.filter(item=>item.first_name.toLowerCase().includes(filter.toLowerCase())||item.last_name.toLowerCase().includes(filter.toLowerCase()) ).map((contact, index) => (
+                                contacts.filter(item => item.first_name.toLowerCase().includes(filter.toLowerCase()) || item.last_name.toLowerCase().includes(filter.toLowerCase())).map((contact, index) => (
                                     <ContactItem
+                                        onClick={() => { props.history.push(`/contacts/${index + 1}`) }}
                                         key={index}
                                         title={`${contact.first_name} ${contact.last_name}`}
                                         subtitle={contact.subtitle}
@@ -40,7 +42,6 @@ function Contacts() {
                     </Row>
                 </Container>
             </section>
-            <Footer />
         </div>
     )
 }

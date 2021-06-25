@@ -3,11 +3,12 @@ import './ContactItem.style.scss'
 interface ContactItemProps {
     title: string,
     subtitle?: string,
-    imgSrc?: string
+    imgSrc?: string,
+    onClick:Function
 }
-const ContactItem: React.FC<ContactItemProps> = ({ title, subtitle = '', imgSrc = '' }) => {
+const ContactItem: React.FC<ContactItemProps> = ({ title, subtitle = '', imgSrc = '' ,onClick}) => {
     return (
-        <div className='contact-item'>
+        <div className='contact-item' onClick={()=>onClick()}>
             <div className='container' >
                 <div className='avatar-container'>
                     <div className='avatar-container_image'>
